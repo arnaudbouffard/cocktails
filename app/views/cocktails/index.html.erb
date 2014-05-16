@@ -1,4 +1,4 @@
-<h1>Listing cocktails</h1>
+<h1>All our cocktails</h1>
 
 <table>
   <thead>
@@ -16,8 +16,7 @@
     <% @cocktails.each do |cocktail| %>
       <tr>
         <td><%= cocktail.name %></td>
-        <td><%= cocktail.picture %></td>
-        <td><%= cocktail.description %></td>
+        <td><%= image_tag(cocktail.picture, size: "100x100") %></td>
         <td><%= link_to 'Show', cocktail %></td>
         <td><%= link_to 'Edit', edit_cocktail_path(cocktail) %></td>
         <td><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @cocktail.name %>
+  <strong>
+    <%= @cocktail.name %>
+  </strong>
 </p>
 
 <p>
-  <strong>Picture:</strong>
-  <%= @cocktail.picture %>
+  <%= image_tag(@cocktail.picture, size: "400x400") %>
 </p>
 
 <p>
