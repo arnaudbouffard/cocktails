@@ -1,0 +1,20 @@
+<h1> Ingredients available</h1>
+
+<table>
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td>
+          <%= ingredient.name %>
+          <td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ingredient', new_ingredient_path %>
+<br>
+<%= link_to 'Back', cocktails_path %>
