@@ -15,10 +15,13 @@ class CocktailsController < ApplicationController
   # GET /cocktails/new
   def new
     @cocktail = Cocktail.new
+    @ingredients = Ingredient.all
+    1.times { @cocktail.dosages.build }
   end
 
   # GET /cocktails/1/edit
   def edit
+    @ingredients = Ingredient.all
   end
 
   # POST /cocktails
@@ -69,6 +72,6 @@ class CocktailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cocktail_params
-      params.require(:cocktail).permit(:name, :picture, :description)
+      params.require(:cocktail).permit(:name, :picture, :description, dosages_attributes: [:quantity, :cocktail_id])
     end
 end

@@ -23,6 +23,29 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+  <div class="field">
+
+<div> Ingrédients: </div>
+
+  <ul>
+    <% @ingredients.each do |ingredient| %>
+      <li>
+        <%= ingredient.name %>
+      </li>
+      <li>
+        <%= f.fields_for :dosages do |dosage_f| %>
+          <%= dosage_f.hidden_field :cocktail_id, value: @cocktail.id %>
+          <%= "quantité de #{ingredient.name}" %>
+          <%= dosage_f.text_field :quantity %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+
+
+
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
