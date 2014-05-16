@@ -17,8 +17,8 @@
 
 <p>
   <strong>Recette:</strong>
-  <ul><% @cocktail.ingredients.each do |ingredient| %>
-      <li><%= ingredient.name %></li>
+  <ul><% @cocktail.dosages.each do |dosage| %>
+      <li><%= "#{dosage.quantity} of #{dosage.ingredient.name}" %></li>
     <% end %>
   </ul>
 </p>
